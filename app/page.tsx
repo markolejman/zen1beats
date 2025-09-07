@@ -185,7 +185,7 @@ export default function ZEN1Landing() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-20 pb-16 px-4">
+      <section className="pt-20 pb-32 md:pb-48 px-4">
         <div className="container mx-auto text-center">
           <div className="relative">
             <div className="flex justify-center mb-8">
@@ -201,7 +201,7 @@ export default function ZEN1Landing() {
             <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 mb-8 text-pretty">
               Feel the Rhythm of House and Trap
             </p>
-            <div className="flex items-center justify-center gap-2 text-zinc-800 dark:text-zinc-200 mb-8">
+            <div className="flex items-center justify-center gap-2 text-zinc-800 dark:text-zinc-200">
               <Music className="w-6 h-6" />
               <span className="text-lg font-medium">
                 Producer • House Music • Trap Beats
@@ -210,6 +210,9 @@ export default function ZEN1Landing() {
           </div>
         </div>
       </section>
+
+      {/* Spacer */}
+      <div className="h-24 md:h-32" />
 
       {/* About Section */}
       <section id="about" className="py-16 px-4">
