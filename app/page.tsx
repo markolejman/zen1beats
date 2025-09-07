@@ -491,7 +491,7 @@ export default function ZEN1Landing() {
                 </form>
               </CardContent>
             </Card>
-            <div className="relative h-full overflow-hidden rounded-2xl">
+            <div className="relative h-[300px] md:h-full overflow-hidden rounded-2xl">
               <div className="w-full h-full relative">
                 {carouselImages.map((image, index) => (
                   <div
