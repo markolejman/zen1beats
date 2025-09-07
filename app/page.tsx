@@ -2,7 +2,7 @@
 
 import type React from "react";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -35,6 +35,38 @@ export default function ZEN1Landing() {
   });
   const [file, setFile] = useState<File | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Initialize intersection observer for About section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const aboutContainer = document.getElementById("about-container");
+        if (aboutContainer) {
+          if (entry.isIntersecting) {
+            aboutContainer.classList.remove("opacity-0");
+            aboutContainer.classList.add("opacity-100");
+          } else {
+            aboutContainer.classList.remove("opacity-100");
+            aboutContainer.classList.add("opacity-0");
+          }
+        }
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      observer.observe(aboutSection);
+    }
+
+    return () => {
+      if (aboutSection) {
+        observer.unobserve(aboutSection);
+      }
+    };
+  }, []);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -94,6 +126,12 @@ export default function ZEN1Landing() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-6">
             <button
+              onClick={() => scrollToSection("about")}
+              className="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+            >
+              About
+            </button>
+            <button
               onClick={() => scrollToSection("socials")}
               className="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
             >
@@ -115,6 +153,15 @@ export default function ZEN1Landing() {
           } overflow-hidden transition-all duration-300 ease-in-out`}
         >
           <div className="container mx-auto px-4 py-2 flex flex-col gap-4 bg-zinc-50/70 dark:bg-zinc-950/70">
+            <button
+              onClick={() => {
+                scrollToSection("about");
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors text-left py-2"
+            >
+              About
+            </button>
             <button
               onClick={() => {
                 scrollToSection("socials");
@@ -165,8 +212,11 @@ export default function ZEN1Landing() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
+      <section id="about" className="py-16 px-4">
+        <div
+          className="container mx-auto max-w-4xl opacity-0 transition-opacity duration-500"
+          id="about-container"
+        >
           <Card className="bg-zinc-100/80 dark:bg-zinc-900/80 backdrop-blur-sm border-zinc-200 dark:border-zinc-800">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl text-zinc-900 dark:text-zinc-100">
@@ -281,109 +331,121 @@ export default function ZEN1Landing() {
 
       {/* Contact Section */}
       <section id="contact" className="py-16 px-4">
-        <div className="container mx-auto max-w-2xl">
-          <Card className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800">
-            <CardHeader className="text-center">
-              <CardTitle className="text-3xl text-zinc-900 dark:text-zinc-100 flex items-center justify-center gap-3">
-                <Mail className="w-8 h-8 text-zinc-700 dark:text-zinc-300" />
-                Get In Touch
-              </CardTitle>
-              <CardDescription className="text-lg text-zinc-600 dark:text-zinc-400">
-                Ready to collaborate or have a question? Drop me a message!
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <Label
-                    htmlFor="name"
-                    className="text-zinc-900 dark:text-zinc-100"
-                  >
-                    Name
-                  </Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="Your name"
-                    required
-                    className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label
-                    htmlFor="email"
-                    className="text-zinc-900 dark:text-zinc-100"
-                  >
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="Your email"
-                    required
-                    className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label
-                    htmlFor="message"
-                    className="text-zinc-900 dark:text-zinc-100"
-                  >
-                    Message
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="What's on your mind"
-                    required
-                    rows={4}
-                    className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 resize-none"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label
-                    htmlFor="file"
-                    className="text-zinc-900 dark:text-zinc-100"
-                  >
-                    Add a file if you like (Max 5MB)
-                  </Label>
-                  <div className="flex items-center gap-3">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800">
+              <CardHeader className="text-center">
+                <CardTitle className="text-3xl text-zinc-900 dark:text-zinc-100 flex items-center justify-center gap-3">
+                  <Mail className="w-8 h-8 text-zinc-700 dark:text-zinc-300" />
+                  Get In Touch
+                </CardTitle>
+                <CardDescription className="text-lg text-zinc-600 dark:text-zinc-400">
+                  Ready to collaborate or have a question? Drop me a message!
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="name"
+                      className="text-zinc-900 dark:text-zinc-100"
+                    >
+                      Name
+                    </Label>
                     <Input
-                      id="file"
-                      type="file"
-                      onChange={handleFileChange}
-                      accept="audio/*,.mp3,.wav,.m4a,.aac"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Your name"
+                      required
                       className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100"
                     />
-                    <Upload className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
                   </div>
-                  {file && (
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                      Selected: {file.name} (
-                      {(file.size / 1024 / 1024).toFixed(2)} MB)
-                    </p>
-                  )}
-                </div>
 
-                <Button
-                  type="submit"
-                  className="w-full bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-zinc-200 text-zinc-50 dark:text-zinc-900"
-                >
-                  Send Message
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="email"
+                      className="text-zinc-900 dark:text-zinc-100"
+                    >
+                      Email
+                    </Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="Your email"
+                      required
+                      className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="message"
+                      className="text-zinc-900 dark:text-zinc-100"
+                    >
+                      Message
+                    </Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="What's on your mind"
+                      required
+                      rows={4}
+                      className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 resize-none"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="file"
+                      className="text-zinc-900 dark:text-zinc-100"
+                    >
+                      Add a file if you like (Max 5MB)
+                    </Label>
+                    <div className="flex items-center gap-3">
+                      <Input
+                        id="file"
+                        type="file"
+                        onChange={handleFileChange}
+                        accept="audio/*,.mp3,.wav,.m4a,.aac"
+                        className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100"
+                      />
+                      <Upload className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
+                    </div>
+                    {file && (
+                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                        Selected: {file.name} (
+                        {(file.size / 1024 / 1024).toFixed(2)} MB)
+                      </p>
+                    )}
+                  </div>
+
+                  <Button
+                    type="submit"
+                    className="w-full bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-zinc-200 text-zinc-50 dark:text-zinc-900"
+                  >
+                    Send Message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+            <div className="relative h-full min-h-[400px] overflow-hidden rounded-2xl">
+              <Image
+                src="/instudio.jpeg"
+                alt="Studio Setup"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -394,7 +456,7 @@ export default function ZEN1Landing() {
             © {new Date().getFullYear()} ZEN1. All rights reserved.
           </p>
           <p className="text-sm text-zinc-500 dark:text-zinc-500 mt-2">
-            House Music • Trap Beats • Electronic Production
+            House Music • Trap Beats • Email: zen1producer@gmail.com
           </p>
         </div>
       </footer>
