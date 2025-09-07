@@ -102,14 +102,19 @@ export default function ZEN1Landing() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-zinc-50/70 dark:bg-zinc-950/70 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Image
-            src="/zen1-logo.png"
-            alt="ZEN1 Logo"
-            width={120}
-            height={40}
-            className="h-8 w-auto"
-            priority
-          />
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="hover:opacity-80 transition-opacity"
+          >
+            <Image
+              src="/zen1-logo.png"
+              alt="ZEN1 Logo"
+              width={120}
+              height={40}
+              className="h-8 w-auto"
+              priority
+            />
+          </button>
 
           {/* Mobile Menu Button */}
           <button
@@ -185,7 +190,7 @@ export default function ZEN1Landing() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-20 pb-32 md:pb-48 px-4">
+      <section className="pt-20 pb-24 md:pb-32 px-4">
         <div className="container mx-auto text-center">
           <div className="relative">
             <div className="flex justify-center mb-8">
@@ -212,7 +217,7 @@ export default function ZEN1Landing() {
       </section>
 
       {/* Spacer */}
-      <div className="h-24 md:h-32" />
+      <div className="h-16 md:h-24" />
 
       {/* About Section */}
       <section id="about" className="py-16 px-4">
