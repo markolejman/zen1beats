@@ -14,17 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Upload,
-  Music,
-  Instagram,
-  Youtube,
-  Headphones,
-  MessageCircle,
-  Mail,
-  Menu,
-  X,
-} from "lucide-react";
+import { Upload, Music, Mail, Menu, X } from "lucide-react";
 import Image from "next/image";
 
 export default function ZEN1Landing() {
@@ -243,13 +233,13 @@ export default function ZEN1Landing() {
                 />
               </div>
               <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed text-pretty">
-                Marko, AKA ZEN1, has been making music since 7th grade,
-                exploring genres like Hardstyle, Techno, House, and Rap/Trap.
-                Growing up in Finland and Sweden, he developed a deep passion
-                for music production, refining his skills at Fryshuset and
-                APAcademy. With a solid foundation in sound design and a
-                creative mindset, Marko produces whatever inspires him – always
-                with professionalism and a unique touch.
+                Marko, AKA ZEN1, has been making music for more than 15 years -
+                since 7th grade, exploring genres like Hardstyle, Techno, House,
+                and Rap/Trap. Growing up in Finland and Sweden, he developed a
+                deep passion for music production, refining his skills at
+                Fryshuset and APAcademy. With a solid foundation in sound design
+                and a creative mindset, Marko produces whatever inspires him –
+                always with professionalism and a unique touch.
               </p>
             </CardContent>
           </Card>
@@ -273,7 +263,12 @@ export default function ZEN1Landing() {
                 size="lg"
                 className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
               >
-                <Youtube className="w-5 h-5" />
+                <Image
+                  src="/youtube.png"
+                  alt="YouTube"
+                  width={20}
+                  height={20}
+                />
                 YouTube
               </Button>
             </a>
@@ -287,7 +282,12 @@ export default function ZEN1Landing() {
                 size="lg"
                 className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
               >
-                <Music className="w-5 h-5" />
+                <Image
+                  src="/beatstars.png"
+                  alt="BeatStars"
+                  width={20}
+                  height={20}
+                />
                 BeatStars
               </Button>
             </a>
@@ -301,7 +301,12 @@ export default function ZEN1Landing() {
                 size="lg"
                 className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
               >
-                <Headphones className="w-5 h-5" />
+                <Image
+                  src="/spotify.png"
+                  alt="Spotify"
+                  width={20}
+                  height={20}
+                />
                 Spotify
               </Button>
             </a>
@@ -315,7 +320,12 @@ export default function ZEN1Landing() {
                 size="lg"
                 className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
               >
-                <Instagram className="w-5 h-5" />
+                <Image
+                  src="/instagram.png"
+                  alt="Instagram"
+                  width={20}
+                  height={20}
+                />
                 Instagram
               </Button>
             </a>
@@ -329,7 +339,7 @@ export default function ZEN1Landing() {
                 size="lg"
                 className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
               >
-                <MessageCircle className="w-5 h-5" />
+                <Image src="/tiktok.png" alt="TikTok" width={20} height={20} />
                 TikTok
               </Button>
             </a>
