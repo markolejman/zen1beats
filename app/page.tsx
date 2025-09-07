@@ -16,8 +16,35 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Upload, Music, Mail, Menu, X } from "lucide-react";
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function ZEN1Landing() {
+  const carouselImages = [
+    { src: "/instudio.jpeg", alt: "Studio Setup" },
+    { src: "/zen1logocrystal.png", alt: "ZEN1 Crystal Logo" },
+    { src: "/greece1.jpeg", alt: "Greece 1" },
+    { src: "/greece2.jpeg", alt: "Greece 2" },
+    { src: "/greece3.jpg", alt: "Greece 3" },
+    { src: "/studio.jpg", alt: "Studio" },
+  ];
+
+  // Set up carousel autoplay with infinite loop
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+    }, 4000); // Change slide every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [carouselImages.length]);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -350,8 +377,8 @@ export default function ZEN1Landing() {
       {/* Contact Section */}
       <section id="contact" className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            <Card className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 h-full">
               <CardHeader className="text-center">
                 <CardTitle className="text-3xl text-zinc-900 dark:text-zinc-100 flex items-center justify-center gap-3">
                   <Mail className="w-8 h-8 text-zinc-700 dark:text-zinc-300" />
@@ -427,19 +454,30 @@ export default function ZEN1Landing() {
                       Add a file if you like (Max 5MB)
                     </Label>
                     <div className="flex items-center gap-3">
-                      <Input
-                        id="file"
-                        type="file"
-                        onChange={handleFileChange}
-                        accept="audio/*,.mp3,.wav,.m4a,.aac"
-                        className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100"
-                      />
-                      <Upload className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
+                      <div className="relative w-full">
+                        <Button
+                          type="button"
+                          variant="outline"
+                          className="w-full bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 flex items-center gap-2"
+                          onClick={() =>
+                            document.getElementById("file")?.click()
+                          }
+                        >
+                          <Upload className="w-5 h-5" />
+                          {file ? file.name : "Choose file"}
+                        </Button>
+                        <input
+                          id="file"
+                          type="file"
+                          onChange={handleFileChange}
+                          accept="audio/*,.mp3,.wav,.m4a,.aac"
+                          className="hidden"
+                        />
+                      </div>
                     </div>
                     {file && (
                       <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                        Selected: {file.name} (
-                        {(file.size / 1024 / 1024).toFixed(2)} MB)
+                        File size: {(file.size / 1024 / 1024).toFixed(2)} MB
                       </p>
                     )}
                   </div>
@@ -453,15 +491,26 @@ export default function ZEN1Landing() {
                 </form>
               </CardContent>
             </Card>
-            <div className="relative h-full min-h-[400px] overflow-hidden rounded-2xl">
-              <Image
-                src="/instudio.jpeg"
-                alt="Studio Setup"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority
-              />
+            <div className="relative h-full overflow-hidden rounded-2xl">
+              <div className="w-full h-full relative">
+                {carouselImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute w-full h-full transition-opacity duration-500 ${
+                      index === currentSlide ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority={index === 0}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
