@@ -215,7 +215,7 @@ export default function ZEN1Landing() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-20 pb-24 md:pb-32 px-4">
+      <section className="min-h-[90vh] flex flex-col justify-center pt-20 pb-24 md:pb-32 px-4">
         <div className="container mx-auto text-center">
           <div className="relative">
             <div className="flex justify-center mb-8">
@@ -236,7 +236,7 @@ export default function ZEN1Landing() {
       </section>
 
       {/* Spacer */}
-      <div className="h-16 md:h-24" />
+      <div className="h-24 md:h-32" />
 
       {/* About Section */}
       <section id="about" className="py-16 px-4">
@@ -566,7 +566,7 @@ export default function ZEN1Landing() {
                 height={40}
                 className="h-8 w-auto mx-auto md:mx-0"
               />
-              <div className="space-y-2">
+              <div className="space-y-2 mt-8">
                 <p className="text-zinc-900 dark:text-zinc-100 font-medium">
                   Music Publisher
                 </p>
@@ -578,7 +578,7 @@ export default function ZEN1Landing() {
                   className="h-24 w-auto mx-auto md:mx-0"
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 mt-8">
                 <p className="text-zinc-900 dark:text-zinc-100 font-medium">
                   Performing Rights Organization (PRO)
                 </p>
