@@ -542,6 +542,8 @@ export default function ZEN1Landing() {
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
                       priority={index === 0}
+                      draggable={false}
+                      onContextMenu={(e) => e.preventDefault()}
                     />
                   </div>
                 ))}
