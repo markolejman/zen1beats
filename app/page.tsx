@@ -222,21 +222,15 @@ export default function ZEN1Landing() {
               <Image
                 src="/zen1-logo.png"
                 alt="ZEN1 Logo"
-                width={600}
-                height={200}
+                width={1000}
+                height={333}
                 className="max-w-full h-auto"
                 priority
               />
             </div>
             <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 mb-8 text-pretty">
-              Feel the Rhythm of House and Trap
+              Swedish Producer • House Music • Trap Beats
             </p>
-            <div className="flex items-center justify-center gap-2 text-zinc-800 dark:text-zinc-200">
-              <Music className="w-6 h-6" />
-              <span className="text-lg font-medium">
-                Producer • House Music • Trap Beats
-              </span>
-            </div>
           </div>
         </div>
       </section>
