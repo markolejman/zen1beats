@@ -11,18 +11,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import emailjs from "@emailjs/browser";
+// Initialize EmailJS
+emailjs.init("OUfaGlfno1WNkmVQN");
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Upload,
-  Music,
-  Mail,
-  Menu,
-  X,
-  ArrowUp,
-  ExternalLink,
-} from "lucide-react";
+import { Mail, Menu, X, ArrowUp, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import {
   Carousel,
@@ -58,8 +53,11 @@ export default function ZEN1Landing() {
     email: "",
     message: "",
   });
-  const [file, setFile] = useState<File | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   // Initialize intersection observer for About section
   useEffect(() => {
@@ -102,20 +100,38 @@ export default function ZEN1Landing() {
     });
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = e.target.files?.[0];
-    if (selectedFile && selectedFile.size <= 5 * 1024 * 1024) {
-      // 5MB limit
-      setFile(selectedFile);
-    } else {
-      alert("File size must be less than 5MB");
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData, file);
-    // Handle form submission here
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const templateParams = {
+        to_email: "zen1producer@gmail.com",
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      };
+
+      await emailjs.send(
+        "service_frlxc6q", // Replace with your EmailJS service ID
+        "template_z2c9muc", // Replace with your EmailJS template ID
+        templateParams,
+        "OUfaGlfno1WNkmVQN" // Replace with your EmailJS public key
+      );
+
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      // Show more detailed error message
+      if (error instanceof Error) {
+        alert("Error details: " + error.message);
+      }
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -425,6 +441,16 @@ export default function ZEN1Landing() {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {submitStatus === "success" && (
+                    <div className="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800">
+                      Message sent successfully!
+                    </div>
+                  )}
+                  {submitStatus === "error" && (
+                    <div className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800">
+                      Failed to send message. Please try again.
+                    </div>
+                  )}
                   <div className="space-y-2">
                     <Label
                       htmlFor="name"
@@ -439,6 +465,7 @@ export default function ZEN1Landing() {
                       onChange={handleInputChange}
                       placeholder="Your name"
                       required
+                      disabled={isSubmitting}
                       className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100"
                     />
                   </div>
@@ -458,6 +485,7 @@ export default function ZEN1Landing() {
                       onChange={handleInputChange}
                       placeholder="Your email"
                       required
+                      disabled={isSubmitting}
                       className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100"
                     />
                   </div>
@@ -481,47 +509,12 @@ export default function ZEN1Landing() {
                     />
                   </div>
 
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="file"
-                      className="text-zinc-900 dark:text-zinc-100"
-                    >
-                      Add a file if you like (Max 5MB)
-                    </Label>
-                    <div className="flex items-center gap-3">
-                      <div className="relative w-full">
-                        <Button
-                          type="button"
-                          variant="outline"
-                          className="w-full bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 flex items-center gap-2"
-                          onClick={() =>
-                            document.getElementById("file")?.click()
-                          }
-                        >
-                          <Upload className="w-5 h-5" />
-                          {file ? file.name : "Choose file"}
-                        </Button>
-                        <input
-                          id="file"
-                          type="file"
-                          onChange={handleFileChange}
-                          accept="audio/*,.mp3,.wav,.m4a,.aac"
-                          className="hidden"
-                        />
-                      </div>
-                    </div>
-                    {file && (
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                        File size: {(file.size / 1024 / 1024).toFixed(2)} MB
-                      </p>
-                    )}
-                  </div>
-
                   <Button
                     type="submit"
+                    disabled={isSubmitting}
                     className="w-full bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-zinc-200 text-zinc-50 dark:text-zinc-900"
                   >
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>
