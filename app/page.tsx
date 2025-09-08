@@ -550,7 +550,7 @@ export default function ZEN1Landing() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-4 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-200 dark:bg-zinc-800">
+      <footer className="py-16 px-4 border-t border-zinc-200 dark:border-zinc-800 bg-gradient-to-r from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Company Info */}
