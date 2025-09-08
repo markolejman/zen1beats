@@ -14,7 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Upload, Music, Mail, Menu, X } from "lucide-react";
+import { Upload, Music, Mail, Menu, X, ArrowUp } from "lucide-react";
 import Image from "next/image";
 import {
   Carousel,
@@ -618,6 +618,17 @@ export default function ZEN1Landing() {
                     Contact
                   </button>
                 </li>
+                <li>
+                  <button
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
+                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-2"
+                  >
+                    <ArrowUp className="w-4 h-4" />
+                    Back to Top
+                  </button>
+                </li>
               </ul>
             </div>
 
@@ -692,7 +703,13 @@ export default function ZEN1Landing() {
                 Contact
               </h3>
               <p className="text-zinc-600 dark:text-zinc-400">
-                Email: zen1producer@gmail.com
+                Email:{" "}
+                <a
+                  href="mailto:zen1producer@gmail.com"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  zen1producer@gmail.com
+                </a>
               </p>
               <p className="text-zinc-600 dark:text-zinc-400 mt-4">
                 © {new Date().getFullYear()} ZEN1
