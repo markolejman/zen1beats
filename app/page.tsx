@@ -370,6 +370,39 @@ export default function ZEN1Landing() {
                 TikTok
               </Button>
             </a>
+            <a
+              href="https://voloco.resonantcavity.com/applinks/creator?id=9952890"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
+              >
+                <Image src="/voloco.png" alt="Voloco" width={20} height={20} />
+                Voloco
+              </Button>
+            </a>
+            <a
+              href="https://music.youtube.com/channel/UCTtrPzermORuGsyP3T5n0PQ?si=PixmFLaJzR6882td"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
+              >
+                <Image
+                  src="/youtubemusic.png"
+                  alt="YouTube Music"
+                  width={20}
+                  height={20}
+                />
+                YouTube Music
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -517,14 +550,157 @@ export default function ZEN1Landing() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900">
-        <div className="container mx-auto text-center">
-          <p className="text-zinc-600 dark:text-zinc-400">
-            © {new Date().getFullYear()} ZEN1. All rights reserved.
-          </p>
-          <p className="text-sm text-zinc-500 dark:text-zinc-500 mt-2">
-            House Music • Trap Beats • Email: zen1producer@gmail.com
-          </p>
+      <footer className="py-16 px-4 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-200 dark:bg-zinc-800">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <div className="text-center md:text-left space-y-4">
+              <Image
+                src="/zen1-logo.png"
+                alt="ZEN1 Logo"
+                width={120}
+                height={40}
+                className="h-8 w-auto mx-auto md:mx-0"
+              />
+              <div className="space-y-2">
+                <p className="text-zinc-900 dark:text-zinc-100 font-medium">
+                  Music Publisher
+                </p>
+                <Image
+                  src="/sonymusicpublishing.png"
+                  alt="Sony Music Publishing"
+                  width={360}
+                  height={120}
+                  className="h-24 w-auto mx-auto md:mx-0"
+                />
+              </div>
+              <div className="space-y-2">
+                <p className="text-zinc-900 dark:text-zinc-100 font-medium">
+                  Performing Rights Organization (PRO)
+                </p>
+                <Image
+                  src="/stim.png"
+                  alt="STIM"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto mx-auto md:mx-0"
+                />
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+                Quick Links
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <button
+                    onClick={() => scrollToSection("about")}
+                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                  >
+                    About
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollToSection("socials")}
+                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                  >
+                    Music and Socials
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollToSection("contact")}
+                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                  >
+                    Contact
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Social Links */}
+            <div>
+              <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+                Follow Me
+              </h3>
+              <div className="flex flex-col space-y-2">
+                <a
+                  href="https://www.youtube.com/@ZEN1BEATS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  YouTube
+                </a>
+                <a
+                  href="https://www.beatstars.com/zen1beats"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  BeatStars
+                </a>
+                <a
+                  href="https://open.spotify.com/artist/5qYaJzLxghIOfZoBVNzLX8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Spotify
+                </a>
+                <a
+                  href="https://www.instagram.com/zen1beats/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://www.tiktok.com/@zen1beats"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  TikTok
+                </a>
+                <a
+                  href="https://voloco.resonantcavity.com/applinks/creator?id=9952890"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Voloco
+                </a>
+                <a
+                  href="https://music.youtube.com/channel/UCTtrPzermORuGsyP3T5n0PQ?si=PixmFLaJzR6882td"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  YouTube Music
+                </a>
+              </div>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+                Contact
+              </h3>
+              <p className="text-zinc-600 dark:text-zinc-400">
+                Email: zen1producer@gmail.com
+              </p>
+              <p className="text-zinc-600 dark:text-zinc-400 mt-4">
+                © {new Date().getFullYear()} ZEN1
+                <br />
+                All rights reserved.
+              </p>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
