@@ -14,7 +14,15 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Upload, Music, Mail, Menu, X, ArrowUp } from "lucide-react";
+import {
+  Upload,
+  Music,
+  Mail,
+  Menu,
+  X,
+  ArrowUp,
+  ExternalLink,
+} from "lucide-react";
 import Image from "next/image";
 import {
   Carousel,
@@ -552,9 +560,9 @@ export default function ZEN1Landing() {
       {/* Footer */}
       <footer className="py-16 px-4 border-t border-zinc-200 dark:border-zinc-800 bg-gradient-to-r from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Company Info */}
-            <div className="text-center md:text-left space-y-4">
+            <div className="col-span-2 md:col-span-1 text-center md:text-left space-y-4">
               <Image
                 src="/zen1-logo.png"
                 alt="ZEN1 Logo"
@@ -715,6 +723,19 @@ export default function ZEN1Landing() {
                 © {new Date().getFullYear()} ZEN1
                 <br />
                 All rights reserved.
+                <br />
+                <span className="mt-2 inline-block">
+                  Website built by{" "}
+                  <a
+                    href="https://www.linkedin.com/company/lejtech/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-zinc-900 dark:hover:text-zinc-100 inline-flex items-center gap-1"
+                  >
+                    LEJTECH
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </span>
               </p>
             </div>
           </div>
