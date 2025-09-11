@@ -389,7 +389,7 @@ export default function ZEN1Landing() {
               </Button>
             </a>
             <a
-              href="https://voloco.resonantcavity.com/applinks/creator?id=9952890"
+              href="https://voloco.resonantcavity.com/applinks/creator?id=18379505"
               target="_blank"
               rel="noopener noreferrer"
             >
