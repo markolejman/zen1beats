@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "ZEN1 OFFICIAL WEBSITE",
     images: [
       {
-        url: "/zen1-logo.png",
+        url: "/zen1-logo.webp",
         width: 1200,
         height: 630,
         alt: "ZEN1 Logo",

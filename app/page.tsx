@@ -29,12 +29,12 @@ import {
 
 export default function ZEN1Landing() {
   const carouselImages = [
-    { src: "/instudio.jpeg", alt: "Studio Setup" },
-    { src: "/zen1logocrystal.png", alt: "ZEN1 Crystal Logo" },
-    { src: "/greece1.jpeg", alt: "Greece 1" },
-    { src: "/greece2.jpeg", alt: "Greece 2" },
-    { src: "/greece3.jpg", alt: "Greece 3" },
-    { src: "/studio.jpg", alt: "Studio" },
+    { src: "/instudio.webp", alt: "Studio Setup" },
+    { src: "/zen1logocrystal.webp", alt: "ZEN1 Crystal Logo" },
+    { src: "/greece1.webp", alt: "Greece 1" },
+    { src: "/greece2.webp", alt: "Greece 2" },
+    { src: "/greece3.webp", alt: "Greece 3" },
+    { src: "/studio.webp", alt: "Studio" },
   ];
 
   // Set up carousel autoplay with infinite loop
@@ -148,7 +148,7 @@ export default function ZEN1Landing() {
             className="hover:opacity-80 transition-opacity"
           >
             <Image
-              src="/zen1-logo.png"
+              src="/zen1-logo.webp"
               alt="ZEN1 Logo"
               width={120}
               height={40}
@@ -236,7 +236,7 @@ export default function ZEN1Landing() {
           <div className="relative">
             <div className="flex justify-center mb-8">
               <Image
-                src="/zen1-logo.png"
+                src="/zen1-logo.webp"
                 alt="ZEN1 Logo"
                 width={1000}
                 height={333}
@@ -269,7 +269,7 @@ export default function ZEN1Landing() {
             <CardContent className="text-center space-y-8">
               <div className="w-64 h-64 mx-auto mb-8">
                 <Image
-                  src="/zen1-profile.jpg"
+                  src="/zen1-profile.webp"
                   alt="ZEN1 Profile"
                   width={256}
                   height={256}
@@ -553,7 +553,7 @@ export default function ZEN1Landing() {
             {/* Company Info */}
             <div className="col-span-2 md:col-span-1 text-center md:text-left space-y-4">
               <Image
-                src="/zen1-logo.png"
+                src="/zen1-logo.webp"
                 alt="ZEN1 Logo"
                 width={120}
                 height={40}
@@ -564,7 +564,7 @@ export default function ZEN1Landing() {
                   Music Publisher
                 </p>
                 <Image
-                  src="/sonymusicpublishing.png"
+                  src="/sonymusicpublishing.webp"
                   alt="Sony Music Publishing"
                   width={360}
                   height={120}
@@ -576,7 +576,7 @@ export default function ZEN1Landing() {
                   Performing Rights Organization (PRO)
                 </p>
                 <Image
-                  src="/stim.png"
+                  src="/stim.webp"
                   alt="STIM"
                   width={120}
                   height={40}
