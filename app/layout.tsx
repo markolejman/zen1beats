@@ -3,12 +3,13 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ZEN1 OFFICIAL WEBSITE",
+  title: "ZEN1® OFFICIAL WEBSITE",
   description:
-    "Swedish music producer ZEN1 specializes in House Music and Trap Beats. With over 15 years of experience, Marko (ZEN1) creates professional, unique productions across multiple genres including Hardstyle, Techno, House, and Rap/Trap.",
+    "Swedish music producer ZEN1® specializes in House Music and Trap Beats. With over 15 years of experience, Marko (ZEN1®) creates professional, unique productions across multiple genres including Hardstyle, Techno, House, and Rap/Trap.",
   generator: "Next.js",
   keywords: [
     "ZEN1",
+    "ZEN1®",
     "Trap Producer",
     "Trap Beats",
     "Swedish Beatmaker",
@@ -22,19 +23,19 @@ export const metadata: Metadata = {
     "Buy Beats",
     "Instrumental Beats",
   ],
-  authors: [{ name: "ZEN1", url: "https://www.youtube.com/@ZEN1BEATS" }],
+  authors: [{ name: "ZEN1®", url: "https://www.youtube.com/@ZEN1BEATS" }],
   openGraph: {
-    title: "ZEN1 OFFICIAL WEBSITE",
+    title: "ZEN1® OFFICIAL WEBSITE",
     description:
-      "Swedish music producer ZEN1 specializes in House Music and Trap Beats. Professional music production with a unique touch.",
+      "Swedish music producer ZEN1® specializes in House Music and Trap Beats. Professional music production with a unique touch.",
     url: "https://zen1beats.com",
-    siteName: "ZEN1 OFFICIAL WEBSITE",
+    siteName: "ZEN1® OFFICIAL WEBSITE",
     images: [
       {
         url: "/zen1-logo.webp",
         width: 1200,
         height: 630,
-        alt: "ZEN1 Logo",
+        alt: "ZEN1® Logo",
       },
     ],
     locale: "en_US",

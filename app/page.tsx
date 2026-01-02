@@ -30,8 +30,7 @@ import {
 export default function ZEN1Landing() {
   const carouselImages = [
     { src: "/instudio.webp", alt: "Studio Setup" },
-    { src: "/zen1logocrystal.webp", alt: "ZEN1 Crystal Logo" },
-    { src: "/greece1.webp", alt: "Greece 1" },
+    { src: "/zen1logocrystal.webp", alt: "ZEN1® Crystal Logo" },
     { src: "/greece2.webp", alt: "Greece 2" },
     { src: "/greece3.webp", alt: "Greece 3" },
     { src: "/studio.webp", alt: "Studio" },
@@ -148,8 +147,8 @@ export default function ZEN1Landing() {
             className="hover:opacity-80 transition-opacity"
           >
             <Image
-              src="/zen1-logo.webp"
-              alt="ZEN1 Logo"
+              src="/footer-nav-logo.webp"
+              alt="ZEN1® Logo"
               width={120}
               height={40}
               className="h-8 w-auto"
@@ -237,7 +236,7 @@ export default function ZEN1Landing() {
             <div className="flex justify-center mb-8">
               <Image
                 src="/zen1-logo.webp"
-                alt="ZEN1 Logo"
+                alt="ZEN1® Logo"
                 width={1000}
                 height={333}
                 className="max-w-full h-auto"
@@ -263,14 +262,14 @@ export default function ZEN1Landing() {
           <Card className="bg-zinc-100/80 dark:bg-zinc-900/80 backdrop-blur-sm border-zinc-200 dark:border-zinc-800">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl text-zinc-900 dark:text-zinc-100">
-                About ZEN1
+                About ZEN1®
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-8">
               <div className="w-64 h-64 mx-auto mb-8">
                 <Image
                   src="/zen1-profile.webp"
-                  alt="ZEN1 Profile"
+                  alt="ZEN1® Profile"
                   width={256}
                   height={256}
                   className="rounded-full object-cover w-full h-full"
@@ -278,7 +277,7 @@ export default function ZEN1Landing() {
                 />
               </div>
               <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed text-pretty">
-                Marko, AKA ZEN1, has been making music for more than 15 years -
+                Marko, AKA ZEN1®, has been making music for more than 15 years -
                 since 7th grade, exploring genres like Hardstyle, Techno, House,
                 and Rap/Trap. Growing up in Finland and Sweden, he developed a
                 deep passion for music production, refining his skills at
@@ -297,7 +296,7 @@ export default function ZEN1Landing() {
           <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-12">
             Music and Socials
           </h2>
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-16">
             <a
               href="https://www.youtube.com/@ZEN1BEATS"
               target="_blank"
@@ -419,6 +418,25 @@ export default function ZEN1Landing() {
                   height={20}
                 />
                 YouTube Music
+              </Button>
+            </a>
+            <a
+              href="https://music.apple.com/us/artist/zen1/1809568008"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
+              >
+                <Image
+                  src="/applemusic.webp"
+                  alt="Apple Music"
+                  width={20}
+                  height={20}
+                />
+                Apple Music
               </Button>
             </a>
           </div>
@@ -553,8 +571,8 @@ export default function ZEN1Landing() {
             {/* Company Info */}
             <div className="col-span-2 md:col-span-1 text-center md:text-left space-y-4">
               <Image
-                src="/zen1-logo.webp"
-                alt="ZEN1 Logo"
+                src="/footer-nav-logo.webp"
+                alt="ZEN1® Logo"
                 width={120}
                 height={40}
                 className="h-8 w-auto mx-auto md:mx-0"
@@ -691,6 +709,14 @@ export default function ZEN1Landing() {
                 >
                   YouTube Music
                 </a>
+                <a
+                  href="https://music.apple.com/us/artist/zen1/1809568008"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Apple Music
+                </a>
               </div>
             </div>
 
@@ -709,14 +735,14 @@ export default function ZEN1Landing() {
                 </a>
               </p>
               <p className="text-zinc-600 dark:text-zinc-400 mt-4">
-                © {new Date().getFullYear()} ZEN1
+                © {new Date().getFullYear()} ZEN1®
                 <br />
                 All rights reserved.
                 <br />
                 <span className="mt-2 inline-block">
                   Website built by{" "}
                   <a
-                    href="https://www.linkedin.com/company/lejtech/"
+                    href="https://www.lejtech.se/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-zinc-900 dark:hover:text-zinc-100 inline-flex items-center gap-1"
