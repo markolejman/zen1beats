@@ -26,6 +26,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import CircularText from "@/components/CircularText";
+import TextType from "@/components/TextType";
+import Grainient from "@/components/Grainient";
 
 export default function ZEN1Landing() {
   const carouselImages = [
@@ -244,9 +247,14 @@ export default function ZEN1Landing() {
                 priority
               />
             </div>
-            <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 mb-8 text-pretty">
-              Swedish Producer • House Music • Trap Beats
-            </p>
+            <div className="flex justify-center mb-8">
+              <CircularText
+                text="ZEN1 • HOUSE • BEATS • "
+                onHover="slowDown"
+                spinDuration={12}
+                className="text-zinc-600 dark:text-zinc-400"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -263,7 +271,20 @@ export default function ZEN1Landing() {
           <Card className="bg-zinc-100/80 dark:bg-zinc-900/80 backdrop-blur-sm border-zinc-200 dark:border-zinc-800">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl text-zinc-900 dark:text-zinc-100">
-                About ZEN1®
+                <TextType
+                  text={[
+                    "Welcome to ZEN1 Website",
+                    "Producer from Sweden",
+                    "House Music & Trap Beats"
+                  ]}
+                  typingSpeed={75}
+                  pauseDuration={1500}
+                  deletingSpeed={50}
+                  showCursor
+                  cursorCharacter="_"
+                  cursorBlinkDuration={0.5}
+                  loop={true}
+                />
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-8">
