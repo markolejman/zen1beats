@@ -144,7 +144,7 @@ export default function ZEN1Landing() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-zinc-50/70 dark:bg-zinc-950/70 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 z-50">
+      <nav className="fixed top-0 w-full bg-zinc-50/70 dark:bg-zinc-950/70 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 z-50 uppercase">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -176,19 +176,19 @@ export default function ZEN1Landing() {
           <div className="hidden md:flex gap-6">
             <button
               onClick={() => scrollToSection("about")}
-              className="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              className="text-xl text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("socials")}
-              className="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              className="text-xl text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
             >
               Music and Socials
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              className="text-xl text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
             >
               Contact
             </button>
@@ -207,7 +207,7 @@ export default function ZEN1Landing() {
                 scrollToSection("about");
                 setIsMobileMenuOpen(false);
               }}
-              className="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors text-left py-2"
+              className="text-lg text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors text-left py-2"
             >
               About
             </button>
@@ -216,7 +216,7 @@ export default function ZEN1Landing() {
                 scrollToSection("socials");
                 setIsMobileMenuOpen(false);
               }}
-              className="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors text-left py-2"
+              className="text-lg text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors text-left py-2"
             >
               Music and Socials
             </button>
@@ -225,7 +225,7 @@ export default function ZEN1Landing() {
                 scrollToSection("contact");
                 setIsMobileMenuOpen(false);
               }}
-              className="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors text-left py-2"
+              className="text-lg text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors text-left py-2"
             >
               Contact
             </button>
@@ -234,7 +234,7 @@ export default function ZEN1Landing() {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-[90vh] flex flex-col justify-center pt-20 pb-24 md:pb-32 px-4">
+      <section className="min-h-[90vh] flex flex-col justify-center pt-20 pb-24 md:pb-32 px-4 uppercase">
         <div className="container mx-auto text-center">
           <div className="relative">
             <div className="flex justify-center mb-8">
@@ -269,8 +269,8 @@ export default function ZEN1Landing() {
           id="about-container"
         >
           <Card className="bg-zinc-100/80 dark:bg-zinc-900/80 backdrop-blur-sm border-zinc-200 dark:border-zinc-800">
-            <CardHeader className="text-center">
-              <CardTitle className="text-3xl text-zinc-900 dark:text-zinc-100">
+            <CardHeader className="text-center uppercase">
+              <CardTitle className="text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100">
                 <TextType
                   text={[
                     "Welcome to ZEN1 Website",
@@ -287,7 +287,7 @@ export default function ZEN1Landing() {
                 />
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-center space-y-8">
+            <CardContent className="text-center space-y-8 normal-case">
               <div className="w-64 h-64 mx-auto mb-8">
                 <Image
                   src="/zen1-profile.webp"
@@ -298,7 +298,7 @@ export default function ZEN1Landing() {
                   priority
                 />
               </div>
-              <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed text-pretty">
+              <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed text-pretty">
                 Marko, AKA ZEN1®, has been making music for more than 15 years -
                 since 7th grade, exploring genres like Hardstyle, Techno, House,
                 and Rap/Trap. Growing up in Finland and Sweden, he developed a
@@ -313,9 +313,9 @@ export default function ZEN1Landing() {
       </section>
 
       {/* Social Links Section */}
-      <section id="socials" className="py-16 px-4 bg-zinc-100 dark:bg-zinc-900">
+      <section id="socials" className="py-16 px-4 bg-zinc-100 dark:bg-zinc-900 uppercase">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-100 mb-12">
             Music and Socials
           </h2>
           <div className="flex flex-wrap justify-center gap-16">
@@ -327,7 +327,7 @@ export default function ZEN1Landing() {
               <Button
                 variant="outline"
                 size="lg"
-                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
+                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors text-lg"
               >
                 <Image
                   src="/youtube.png"
@@ -346,7 +346,7 @@ export default function ZEN1Landing() {
               <Button
                 variant="outline"
                 size="lg"
-                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
+                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors text-lg"
               >
                 <Image
                   src="/beatstars.png"
@@ -365,7 +365,7 @@ export default function ZEN1Landing() {
               <Button
                 variant="outline"
                 size="lg"
-                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
+                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors text-lg"
               >
                 <Image
                   src="/spotify.png"
@@ -384,7 +384,7 @@ export default function ZEN1Landing() {
               <Button
                 variant="outline"
                 size="lg"
-                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
+                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors text-lg"
               >
                 <Image
                   src="/instagram.png"
@@ -403,7 +403,7 @@ export default function ZEN1Landing() {
               <Button
                 variant="outline"
                 size="lg"
-                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
+                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors text-lg"
               >
                 <Image src="/tiktok.png" alt="TikTok" width={20} height={20} />
                 TikTok
@@ -417,7 +417,7 @@ export default function ZEN1Landing() {
               <Button
                 variant="outline"
                 size="lg"
-                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
+                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors text-lg"
               >
                 <Image src="/voloco.png" alt="Voloco" width={20} height={20} />
                 Voloco
@@ -431,7 +431,7 @@ export default function ZEN1Landing() {
               <Button
                 variant="outline"
                 size="lg"
-                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
+                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors text-lg"
               >
                 <Image
                   src="/youtubemusic.png"
@@ -450,7 +450,7 @@ export default function ZEN1Landing() {
               <Button
                 variant="outline"
                 size="lg"
-                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors"
+                className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors text-lg"
               >
                 <Image
                   src="/applemusic.webp"
@@ -466,35 +466,35 @@ export default function ZEN1Landing() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-4">
+      <section id="contact" className="py-16 px-4 uppercase">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             <Card className="bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 h-full">
               <CardHeader className="text-center">
-                <CardTitle className="text-3xl text-zinc-900 dark:text-zinc-100 flex items-center justify-center gap-3">
-                  <Mail className="w-8 h-8 text-zinc-700 dark:text-zinc-300" />
+                <CardTitle className="text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 flex items-center justify-center gap-3">
+                  <Mail className="w-10 h-10 text-zinc-700 dark:text-zinc-300" />
                   Get In Touch
                 </CardTitle>
-                <CardDescription className="text-lg text-zinc-600 dark:text-zinc-400">
+                <CardDescription className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400">
                   Ready to collaborate or have a question? Drop me a message!
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {submitStatus === "success" && (
-                    <div className="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800">
+                    <div className="p-4 mb-4 text-base text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800">
                       Message sent successfully!
                     </div>
                   )}
                   {submitStatus === "error" && (
-                    <div className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800">
+                    <div className="p-4 mb-4 text-base text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800">
                       Failed to send message. Please try again.
                     </div>
                   )}
                   <div className="space-y-2">
                     <Label
                       htmlFor="name"
-                      className="text-zinc-900 dark:text-zinc-100"
+                      className="text-xl text-zinc-900 dark:text-zinc-100"
                     >
                       Name
                     </Label>
@@ -503,17 +503,17 @@ export default function ZEN1Landing() {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Your name"
+                      placeholder="YOUR NAME"
                       required
                       disabled={isSubmitting}
-                      className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100"
+                      className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 normal-case placeholder:uppercase text-lg"
                     />
                   </div>
 
                   <div className="space-y-2">
                     <Label
                       htmlFor="email"
-                      className="text-zinc-900 dark:text-zinc-100"
+                      className="text-xl text-zinc-900 dark:text-zinc-100"
                     >
                       Email
                     </Label>
@@ -523,17 +523,17 @@ export default function ZEN1Landing() {
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="Your email"
+                      placeholder="YOUR EMAIL"
                       required
                       disabled={isSubmitting}
-                      className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100"
+                      className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 normal-case placeholder:uppercase text-lg"
                     />
                   </div>
 
                   <div className="space-y-2">
                     <Label
                       htmlFor="message"
-                      className="text-zinc-900 dark:text-zinc-100"
+                      className="text-xl text-zinc-900 dark:text-zinc-100"
                     >
                       Message
                     </Label>
@@ -542,17 +542,17 @@ export default function ZEN1Landing() {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="What's on your mind"
+                      placeholder="WHAT'S ON YOUR MIND"
                       required
                       rows={4}
-                      className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 resize-none"
+                      className="bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 resize-none normal-case placeholder:uppercase text-lg"
                     />
                   </div>
 
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-zinc-200 text-zinc-50 dark:text-zinc-900"
+                    className="w-full bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-zinc-200 text-zinc-50 dark:text-zinc-900 text-xl py-6"
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
@@ -587,7 +587,7 @@ export default function ZEN1Landing() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-4 border-t border-zinc-200 dark:border-zinc-800 bg-gradient-to-r from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900">
+      <footer className="py-16 px-4 border-t border-zinc-200 dark:border-zinc-800 bg-gradient-to-r from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 uppercase">
         <div className="container mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Company Info */}
@@ -600,7 +600,7 @@ export default function ZEN1Landing() {
                 className="h-8 w-auto mx-auto md:mx-0"
               />
               <div className="space-y-2 mt-8">
-                <p className="text-zinc-900 dark:text-zinc-100 font-medium">
+                <p className="text-xl text-zinc-900 dark:text-zinc-100 font-medium">
                   Music Publisher
                 </p>
                 <Image
@@ -612,7 +612,7 @@ export default function ZEN1Landing() {
                 />
               </div>
               <div className="space-y-2 mt-8">
-                <p className="text-zinc-900 dark:text-zinc-100 font-medium">
+                <p className="text-xl text-zinc-900 dark:text-zinc-100 font-medium">
                   Performing Rights Organization (PRO)
                 </p>
                 <Image
@@ -627,14 +627,14 @@ export default function ZEN1Landing() {
 
             {/* Quick Links */}
             <div>
-              <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+              <h3 className="font-semibold text-xl text-zinc-900 dark:text-zinc-100 mb-4">
                 Quick Links
               </h3>
               <ul className="space-y-2">
                 <li>
                   <button
                     onClick={() => scrollToSection("about")}
-                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                    className="text-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
                   >
                     About
                   </button>
@@ -642,7 +642,7 @@ export default function ZEN1Landing() {
                 <li>
                   <button
                     onClick={() => scrollToSection("socials")}
-                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                    className="text-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
                   >
                     Music and Socials
                   </button>
@@ -650,7 +650,7 @@ export default function ZEN1Landing() {
                 <li>
                   <button
                     onClick={() => scrollToSection("contact")}
-                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                    className="text-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
                   >
                     Contact
                   </button>
@@ -660,7 +660,7 @@ export default function ZEN1Landing() {
                     onClick={() =>
                       window.scrollTo({ top: 0, behavior: "smooth" })
                     }
-                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-2"
+                    className="text-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-2"
                   >
                     <ArrowUp className="w-4 h-4" />
                     Back to Top
@@ -671,7 +671,7 @@ export default function ZEN1Landing() {
 
             {/* Social Links */}
             <div>
-              <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+              <h3 className="font-semibold text-xl text-zinc-900 dark:text-zinc-100 mb-4">
                 Follow Me
               </h3>
               <div className="flex flex-col space-y-2">
@@ -679,7 +679,7 @@ export default function ZEN1Landing() {
                   href="https://www.youtube.com/@ZEN1BEATS"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                  className="text-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
                 >
                   YouTube
                 </a>
@@ -687,7 +687,7 @@ export default function ZEN1Landing() {
                   href="https://www.beatstars.com/zen1beats"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                  className="text-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
                 >
                   BeatStars
                 </a>
@@ -695,7 +695,7 @@ export default function ZEN1Landing() {
                   href="https://open.spotify.com/artist/5qYaJzLxghIOfZoBVNzLX8"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                  className="text-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
                 >
                   Spotify
                 </a>
@@ -703,7 +703,7 @@ export default function ZEN1Landing() {
                   href="https://www.instagram.com/zen1beats/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                  className="text-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
                 >
                   Instagram
                 </a>
@@ -711,7 +711,7 @@ export default function ZEN1Landing() {
                   href="https://www.tiktok.com/@zen1beats"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                  className="text-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
                 >
                   TikTok
                 </a>
@@ -719,7 +719,7 @@ export default function ZEN1Landing() {
                   href="https://voloco.resonantcavity.com/applinks/creator?id=9952890"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                  className="text-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
                 >
                   Voloco
                 </a>
@@ -727,7 +727,7 @@ export default function ZEN1Landing() {
                   href="https://music.youtube.com/channel/UCTtrPzermORuGsyP3T5n0PQ?si=PixmFLaJzR6882td"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                  className="text-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
                 >
                   YouTube Music
                 </a>
@@ -735,7 +735,7 @@ export default function ZEN1Landing() {
                   href="https://music.apple.com/us/artist/zen1/1809568008"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                  className="text-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
                 >
                   Apple Music
                 </a>
@@ -744,10 +744,10 @@ export default function ZEN1Landing() {
 
             {/* Contact Info */}
             <div>
-              <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+              <h3 className="font-semibold text-xl text-zinc-900 dark:text-zinc-100 mb-4">
                 Contact
               </h3>
-              <p className="text-zinc-600 dark:text-zinc-400">
+              <p className="text-lg text-zinc-600 dark:text-zinc-400">
                 Email:{" "}
                 <a
                   href="mailto:zen1producer@gmail.com"
@@ -756,7 +756,7 @@ export default function ZEN1Landing() {
                   zen1producer@gmail.com
                 </a>
               </p>
-              <p className="text-zinc-600 dark:text-zinc-400 mt-4">
+              <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-4">
                 © {new Date().getFullYear()} ZEN1®
                 <br />
                 All rights reserved.

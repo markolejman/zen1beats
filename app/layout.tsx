@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
+
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bebas-neue",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "ZEN1® OFFICIAL WEBSITE",
@@ -63,7 +71,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans">
+      <body className={`${bebasNeue.variable} font-[var(--font-bebas-neue)]`}>
         {children}
         <Analytics />
       </body>
