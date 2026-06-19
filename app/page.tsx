@@ -34,7 +34,7 @@ export default function ZEN1Landing() {
   const carouselImages = [
     { src: "/artist-image.jpg", alt: "Artist in the city" },
     { src: "/instudio.webp", alt: "Studio Setup" },
-    { src: "/zen1logocrystal.webp", alt: "ZEN1® Crystal Logo" },
+    { src: "/zen1logocrystal.webp", alt: "ZEN1 Crystal Logo" },
     { src: "/greece2.webp", alt: "Greece 2" },
     { src: "/greece3.webp", alt: "Greece 3" },
     { src: "/studio.webp", alt: "Studio" },
@@ -152,7 +152,7 @@ export default function ZEN1Landing() {
           >
             <Image
               src="/footer-nav-logo.webp"
-              alt="ZEN1® Logo"
+              alt="ZEN1 Logo"
               width={120}
               height={40}
               className="h-8 w-auto"
@@ -240,7 +240,7 @@ export default function ZEN1Landing() {
             <div className="flex justify-center mb-8">
               <Image
                 src="/zen1-logo.webp"
-                alt="ZEN1® Logo"
+                alt="ZEN1 Logo"
                 width={1000}
                 height={333}
                 className="max-w-full h-auto"
@@ -291,7 +291,7 @@ export default function ZEN1Landing() {
               <div className="w-64 h-64 mx-auto mb-8">
                 <Image
                   src="/zen1-profile.webp"
-                  alt="ZEN1® Profile"
+                  alt="ZEN1 Profile"
                   width={256}
                   height={256}
                   className="rounded-full object-cover w-full h-full"
@@ -299,7 +299,7 @@ export default function ZEN1Landing() {
                 />
               </div>
               <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed text-pretty">
-                Marko, AKA ZEN1®, has been making music for more than 15 years -
+                Marko, AKA ZEN1, has been making music for more than 15 years -
                 since 7th grade, exploring genres like Hardstyle, Techno, House,
                 and Rap/Trap. Growing up in Finland and Sweden, he developed a
                 deep passion for music production, refining his skills at
@@ -594,7 +594,7 @@ export default function ZEN1Landing() {
             <div className="col-span-2 md:col-span-1 text-center md:text-left space-y-4">
               <Image
                 src="/footer-nav-logo.webp"
-                alt="ZEN1® Logo"
+                alt="ZEN1 Logo"
                 width={120}
                 height={40}
                 className="h-8 w-auto mx-auto md:mx-0"
@@ -757,7 +757,7 @@ export default function ZEN1Landing() {
                 </a>
               </p>
               <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-4">
-                © {new Date().getFullYear()} ZEN1®
+                © {new Date().getFullYear()} ZEN1
                 <br />
                 All rights reserved.
                 <br />
