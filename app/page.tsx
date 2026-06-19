@@ -29,6 +29,7 @@ import {
 
 export default function ZEN1Landing() {
   const carouselImages = [
+    { src: "/artist-image.jpg", alt: "Artist in the city" },
     { src: "/instudio.webp", alt: "Studio Setup" },
     { src: "/zen1logocrystal.webp", alt: "ZEN1® Crystal Logo" },
     { src: "/greece2.webp", alt: "Greece 2" },
