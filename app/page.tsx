@@ -273,9 +273,10 @@ export default function ZEN1Landing() {
               <CardTitle className="text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100">
                 <TextType
                   text={[
-                    "Welcome to ZEN1 Website",
-                    "Producer from Sweden",
-                    "House Music & Trap Beats"
+                    "House Music",
+                    "Trap Beats",
+                    "Swedish Producer",
+                    "About ZEN1"
                   ]}
                   typingSpeed={75}
                   pauseDuration={1500}
